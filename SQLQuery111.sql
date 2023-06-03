@@ -1,21 +1,23 @@
-SELECT *
-FROM CovidDeaths
-WHERE continent IS NOT NULL
-ORDER BY 3,4
+/*
+Covid-19 Data Exploration
+Skills used: Basic SQL terms, Group by, Joins, Temp Tables, CTE's, Aggregate Functions, Window Functions, Converting Data Types
 
+*/
 
---Select Data that's going to be used
+--Select Data that we're going to start off with
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
 FROM CovidDeaths
+WHERE continent IS NOT NULL 
 ORDER BY 1,2
 
 --Looking at Total Cases vs Total Deaths
---Shows likelihood of dying if Covid-19 is contracted
+--Shows likelihood of dying if Covid-19 is contracted in your country
 
 SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS DeathPercentage
 FROM CovidDeaths
 WHERE location LIKE '%states%'
+AND continent IS NOT NULL
 ORDER BY 1,2
 
 --Looking at Total Cases vs Population
@@ -23,7 +25,6 @@ ORDER BY 1,2
 
 SELECT location, date, total_cases, population, (total_cases/population)*100 AS PercentPopulationInfected
 FROM CovidDeaths
-WHERE location = 'United States'
 ORDER by 1,2
 
 --Looking at countries with highest infection rate compared to population
@@ -73,7 +74,6 @@ JOIN CovidVaccinations vac
 	AND dea.date = vac.date
 WHERE dea.continent IS NOT NULL
 ORDER BY 2,3
-
 
 --Using a CTE
 
