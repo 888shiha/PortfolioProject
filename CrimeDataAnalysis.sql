@@ -1,4 +1,4 @@
-/* This Crime Dataset contains 630,010 rows of crime data, specifically about Murder and Manslaughter only, with the following 21 fields:
+/* This Crime Dataset contains 636,670 rows of crime data, specifically about Murder and Manslaughter only, with the following 21 fields:
    1. Record ID: A unique identifier for each crime record.
    2. Agency Code: A unique code assigned to law enforcement agencies.
    3. Agency Name: The name of the law enforcement agency that reported the crime.
@@ -20,8 +20,7 @@
    19. Perpetrator Ethnicity: The ethnic background of the perpetrator (Hispanic, Non-Hispanic, Unknown).
    20. Relationship: The relationship between the victim and the perpetrator (e.g., Acquaintance, Family, Stranger, etc.).
    21. Weapon: The type of weapon used in the crime (Gun, Knife, Blunt Object, etc.).
-The first step was data cleaning which involved changing column names, changing data types, checking for duplicates
-
+The first step was data cleaning which involved changing column names, changing data types, and checking for duplicates.
 */
 
 #STEP 1: CHANGING COLUMN NAMES
